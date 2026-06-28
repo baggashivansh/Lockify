@@ -1,0 +1,17 @@
+# Test profile - integration tests ke liye
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+lockify:
+  security:
+    jwt:
+      secret: test-jwt-secret-key-for-integration-tests-only!!
+      access-token-expiry-minutes: 15
+      refresh-token-expiry-days: 7
+
+logging:
+  level:
+    com.lockify: INFO

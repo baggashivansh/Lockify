@@ -1,0 +1,32 @@
+# Build
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Environment secrets - kabhi commit mat karo
+.env
+.env.local
+*.pem
+*.key
+
+# Test output
+test-output/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/

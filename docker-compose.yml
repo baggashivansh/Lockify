@@ -1,0 +1,37 @@
+# Lockify local development stack
+# Run: docker compose up -d
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: lockify-postgres
+    environment:
+      POSTGRES_DB: lockify
+      POSTGRES_USER: lockify
+      POSTGRES_PASSWORD: lockify_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - lockify_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lockify -d lockify"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: lockify-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - lockify_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  lockify_pg_data:
+  lockify_redis_data:
