@@ -3,7 +3,6 @@ package com.lockify.phase5.oauth.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 /**
@@ -12,7 +11,6 @@ import org.springframework.util.StringUtils;
  */
 @Getter
 @Setter
-@Component
 @ConfigurationProperties(prefix = "lockify.oauth")
 public class OAuthProperties {
 

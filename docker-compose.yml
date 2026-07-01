@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: lockify
       POSTGRES_PASSWORD: lockify_secret
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - lockify_pg_data:/var/lib/postgresql/data
     healthcheck:

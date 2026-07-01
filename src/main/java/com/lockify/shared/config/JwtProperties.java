@@ -3,13 +3,11 @@ package com.lockify.shared.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * JWT configuration properties - application.yml se bind hoti hain.
  * Production me JWT_SECRET environment variable se set karo.
  */
-@Configuration
 @ConfigurationProperties(prefix = "lockify.security.jwt")
 @Getter
 @Setter

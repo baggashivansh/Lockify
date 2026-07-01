@@ -1,5 +1,6 @@
 package com.lockify;
 
+import com.lockify.phase5.oauth.config.OAuthProperties;
 import com.lockify.phase2.account.config.AccountSecurityProperties;
 import com.lockify.shared.config.SecurityProperties;
 import com.lockify.shared.config.JwtProperties;
@@ -15,7 +16,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  * com.lockify package ke andar sab beans ko.
  */
 @SpringBootApplication
-@EnableConfigurationProperties({JwtProperties.class, SecurityProperties.class, AccountSecurityProperties.class})
+@EnableConfigurationProperties({JwtProperties.class, SecurityProperties.class, AccountSecurityProperties.class, OAuthProperties.class})
 public class LockifyApplication {
 
     public static void main(String[] args) {

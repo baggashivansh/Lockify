@@ -2,8 +2,8 @@ package com.lockify.phase5.oauth.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -25,7 +25,7 @@ import java.util.List;
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-@ConditionalOnExpression("@oauthProperties.isAnyProviderConfigured()")
+@Conditional(OAuthProvidersConfiguredCondition.class)
 public class OAuth2ClientConfig {
 
     private final OAuthProperties oauthProperties;

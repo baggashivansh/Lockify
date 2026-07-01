@@ -3,12 +3,10 @@ package com.lockify.phase2.account.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Phase 2 account security settings - application.yml se bind hoti hain.
  */
-@Configuration
 @ConfigurationProperties(prefix = "lockify.phase2")
 @Getter
 @Setter
